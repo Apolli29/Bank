@@ -54,7 +54,7 @@ namespace BankTests
             Assert.Fail("The expected exception was not thrown.");
         }
 
-        // Самостоятельные тесты для метода Credit
+        // Самостоятельные тесты
 
         [TestMethod]
         public void Credit_WithValidAmount_UpdatesBalance()
