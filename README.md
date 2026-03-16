@@ -46,9 +46,12 @@ Skipped: 0
 # Скриншоты
 В отчёте представлены:
 
-- ![Скриншот работы консольного приложения](Bank/console_test.png)
-  
-- ![Скриншот окна Test Explorer с результатами тестов](Bank/done_tests.png)
+- Скриншот работы консольного приложения
+-  <img width="347" height="115" alt="console_test" src="https://github.com/user-attachments/assets/9a2c28ea-201c-43bb-b6bc-ae9ff1072f76" />
+
+- Скриншот окна Test Explorer с результатами тестов
+- <img width="537" height="333" alt="done_tests" src="https://github.com/user-attachments/assets/bcbd654d-57ba-4893-aad9-e1e77d293a8b" />
+
 # Вывод
 В ходе выполнения практической работы было реализовано автоматизированное тестирование консольного приложения на языке C# в среде Microsoft Visual Studio.
 Были разработаны модульные тесты для проверки корректности работы методов Debit и Credit класса BankAccount. В процессе тестирования была обнаружена ошибка
