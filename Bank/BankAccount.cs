@@ -9,25 +9,30 @@ namespace BankAccountNS
     public class BankAccount
     {
         /// <summary>
-        /// Сообщение об ошибке: сумма списания превышает баланс.
+        /// Имя владельца света
         /// </summary>
         public const string DebitAmountExceedsBalanceMessage = "Debit amount exceeds balance";
 
         /// <summary>
-        /// Сообщение об ошибке: сумма списания меньше нуля.
+        /// Списания меньше нуля.
         /// </summary>
         public const string DebitAmountLessThanZeroMessage = "Debit amount is less than zero";
 
         private readonly string m_customerName;
+        /// <summary>
+        /// Текущий баланс счета
+        /// </summary>
         private double m_balance;
-
+        /// <summary>
+        /// Закрытый конструктор по умолчанию
+        /// </summary>
         private BankAccount() { }
 
         /// <summary>
-        /// Конструктор банковского счета.
+        /// Создает новый банковский счет
         /// </summary>
-        /// <param name="customerName">Имя владельца счета</param>
-        /// <param name="balance">Начальный баланс</param>
+        /// <param name="customerName">Имя клиента</param>
+        /// <param name="balance">Начальный баланс счета</param>
         public BankAccount(string customerName, double balance)
         {
             m_customerName = customerName;
@@ -35,25 +40,30 @@ namespace BankAccountNS
         }
 
         /// <summary>
-        /// Имя владельца счета.
+        /// Получает имя владельца счета
         /// </summary>
+        /// <value>Имя клиента</value>
         public string CustomerName
         {
             get { return m_customerName; }
         }
 
         /// <summary>
-        /// Текущий баланс счета.
+        /// Получает текущий баланс счета
         /// </summary>
+        /// <value>Текущи баланс</value>
+
         public double Balance
         {
             get { return m_balance; }
         }
-
         /// <summary>
-        /// Списание средств со счета.
+        /// Метод снятия средств со счета
         /// </summary>
         /// <param name="amount">Сумма списания</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// Генерируется, если сумма больше баланса или меньше нуля
+        /// </exception>
         public void Debit(double amount)
         {
             if (amount > m_balance)
@@ -70,9 +80,12 @@ namespace BankAccountNS
         }
 
         /// <summary>
-        /// Пополнение счета.
+        /// Метод зачисления средств на счет
         /// </summary>
-        /// <param name="amount">Сумма пополнения</param>
+        /// <param name="amount">Сумма зачисления</param>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// Генерируется, если сумма меньше нуля
+        /// </exception>
         public void Credit(double amount)
         {
             if (amount < 0)
@@ -82,6 +95,9 @@ namespace BankAccountNS
 
             m_balance += amount;
         }
+        /// <summary>
+        /// Точка входа в программу
+        /// </summary>
 
         static void Main()
         {
